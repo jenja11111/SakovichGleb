@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="p-3 mb-3 border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a asp-action="Index" asp-controller="Home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img src="~/img/doc.png" width="40" height="40">
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a asp-action="Index" asp-controller="Home" class="nav-link px-2 link-dark">Главная</a></li>
+                        <li><a asp-action="Index" asp-controller="Curriculum" class="nav-link px-2 link-dark">Учебный план</a></li>
+                        <li><a asp-action="Index" asp-controller="LoadSecondHalfDay" class="nav-link px-2 link-dark">Нагрузки второй половины дня</a></li>
+                        <li><a asp-action="Index" asp-controller="LoadPerMonth" class="nav-link px-2 link-dark">Выписка по месяцам</a></li>
+                    </ul>
+                    <div class="col-md-3 text-end">
+                        <a asp-action="Login" asp-controller="User" class="btn btn-outline-primary me-2">Авторизация</a>
+                        <a asp-action="Register" asp-controller="User" class="btn btn-primary">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            @RenderBody()
+        </div>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a asp-action="Index" asp-controller="Home" class="nav-link px-2 text-muted">Главная</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Полезная информация</a></li>
+            </ul>
+            <p class="text-center text-muted">© 2022 БНТУ - Сакович Глеб</p>
+        </footer>
+    </div>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>
