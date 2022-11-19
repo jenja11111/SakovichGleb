@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SakovichGleb.Data.Models;
 
-namespace IndividualPlan.Data
+namespace SakovichGleb.Data
 {
     public class AppDbContext: DbContext
     {
@@ -8,5 +9,10 @@ namespace IndividualPlan.Data
         { 
 
         }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Semestr> Semestrs { get; set; }
+        public DbSet<Month> Months { get; set; }
+        public DbSet<NHours> NHourses { get; set; }
     }
 }

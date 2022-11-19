@@ -1,0 +1,35 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "_LayoutAccount";
+}
+<head>
+    <link href="~/css/signin.css" rel="stylesheet">
+</head>
+<main class="form-signin">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <img class="mb-4" src="~/img/doc.png" alt="" width="64" height="64" style="display: block; margin: auto;">
+        <h1 class="h3 mb-3 text-center fw-normal">Регистрация</h1>
+        @Html.ValidationSummary(true)
+
+        <div class="form-floating">
+            <input class="form-control" asp-for="Login" placeholder="Логин">
+            <label asp-for="Login">Логин</label>
+        </div>
+        <p></p>
+        <div class="form-floating">
+            <input class="form-control" asp-for="Password" placeholder="Пароль">
+            <label asp-for="Password">Пароль</label>
+        </div>
+        <p></p>
+        <div class="form-floating">
+            <input class="form-control" asp-for="ConfirmPassword" placeholder="Пароль">
+            <label asp-for="ConfirmPassword">Повторите пароль</label>
+        </div>
+        <p></p>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегистрировать</button>
+    }
+</main>

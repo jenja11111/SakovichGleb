@@ -1,0 +1,35 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "Авторизация";
+    Layout = "_LayoutAccount";
+}
+<head>
+    <link href="~/css/signin.css" rel="stylesheet">
+</head>
+<main class="form-signin">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <img class="mb-4" src="~/img/doc.png" style="display: block; margin: auto;" alt="" width="64" height="64">
+        <h1 class="h3 mb-3 text-center fw-normal">Авторизация</h1>
+        @Html.ValidationSummary(true)
+
+        <div class="form-floating">
+            <input class="form-control" asp-for="Login" placeholder="Логин">
+            <label asp-for="Login">Логин</label>
+        </div>
+        <p></p>
+        <div class="form-floating">
+            <input class="form-control" asp-for="Password" placeholder="Пароль">
+            <label asp-for="Password">Пароль</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Запомнить меня
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+    }
+</main>

@@ -83,3 +83,6 @@ D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\refint\SakovichGleb.dll
 D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\SakovichGleb.pdb
 D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\SakovichGleb.genruntimeconfig.cache
 D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\ref\SakovichGleb.dll
+D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+D:\Projects\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs

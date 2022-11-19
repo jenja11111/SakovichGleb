@@ -1,0 +1,18 @@
+﻿@model SakovichGleb.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "Главная";
+}
+@if(Model.User.Login == "Admin"){
+    <h3> Админская панель </h3>
+    <p></p><p></p>
+    <ol>       
+        @foreach(var user in Model.UserRepository.GetUsers())
+        {
+            <li>@user.Surname + @user.FName + @user.LName</li>
+        }
+    </ol>
+}
+else
+{
+    <h1> Домашняя страница </h1>
+}
