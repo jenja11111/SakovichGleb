@@ -1,0 +1,13 @@
+﻿@model SakovichGleb.Data.Repository.UserRepository
+@{
+    ViewBag.Title = "Главная";
+}
+<h3> Админская панель </h3>
+<p></p><p></p>
+<ol>
+    @foreach (var user in Model.GetUsers())
+    {
+        <li>@user.Surname @user.FName @user.LName</li>
+    }
+</ol>
+

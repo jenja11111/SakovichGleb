@@ -1,0 +1,203 @@
+﻿@model SakovichGleb.ViewModels.MonthViewModel
+@{
+    ViewBag.Title = "Нагрузка";
+}
+<p style="text-align:center">
+    <select class="form-select" style="width: 520px; margin: auto; font-size: 18pt" aria-label="Default select example">
+        <option>Сентябрь</option>
+        <option>Октябрь</option>
+        <option>Ноябрь</option>
+        <option>Декабрь</option>
+        <option>Январь</option>
+        <option>Февраль</option>
+        <option>Март</option>
+        <option>Апрель</option>
+        <option>Май</option>
+        <option>Июнь</option>
+    </select>
+</p>
+<table id="myTable" align="center" cellspacing="0" class="table table-bordered border-dark table-sm table-responsive" style="margin: auto; width:700pt">
+    <tbody>
+        <tr>
+            <td rowspan="2" style="width:52.8pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Дата</span></span></p>
+            </td>
+            <td colspan="16" style="width:449.6pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Количество проведенных часов занятий</span></span></p>
+            </td>
+            <td rowspan="2" style="width:125.7pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Наименование дисциплины </span></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.35pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Лекция</span></span></p>
+            </td>
+            <td style="width:32.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Практич. занятия</span></span></p>
+            </td>
+            <td style="width:31.85pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Лаборат. занятия</span></span></p>
+            </td>
+            <td style="width:28.65pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Курс. проект.</span></span></p>
+            </td>
+            <td style="width:27.35pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">РГР</span></span></p>
+            </td>
+            <td style="width:32.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Контр. раб.</span></span></p>
+            </td>
+            <td style="width:29.4pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Консультации</span></span></p>
+            </td>
+            <td style="width:28.65pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Зачёты</span></span></p>
+            </td>
+            <td style="width:29.4pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Экзамены</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Практик.</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Рук. дипл. раб.</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Консул. дипл. раб.</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Реценз. дипл. раб.</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">ГЭК</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Руков. магистр.</span></span></p>
+            </td>
+            <td style="width:28.9pt">
+                <p style="text-align:center"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Руков. аспир.</span></span></p>
+            </td>
+        </tr>
+        @for (int i = 1; i < 32; i++)
+        {
+            <tr>
+                <td style="width:52.8pt">
+                    <p style="text-align:right"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">@i.09.2022</span></span></p>
+                </td>
+                <td style="width:27.35pt">
+                    <input style="text-align: center; border: none; width: 27.35pt; margin: auto " value="0">
+                </td>
+                <td style="width:32.9pt">
+                    <input style="text-align: center; border: none; width: 32.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:31.85pt">
+                    <input style="text-align: center; border: none; width: 31.85pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.65pt">
+                    <input style="text-align: center; border: none; width: 28.65pt; margin: auto " value="0">
+                </td>
+                <td style="width:27.35pt">
+                    <input style="text-align: center; border: none; width: 27.35pt; margin: auto " value="0">
+                </td>
+                <td style="width:32.9pt">
+                    <input style="text-align: center; border: none; width: 32.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:29.4pt">
+                    <input style="text-align: center; border: none; width: 29.4pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.65pt">
+                    <input style="text-align: center; border: none; width: 28.65pt; margin: auto " value="0">
+                </td>
+                <td style="width:29.4pt">
+                    <input style="text-align: center; border: none; width: 29.4pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:28.9pt">
+                    <input style="text-align: center; border: none; width: 28.9pt; margin: auto " value="0">
+                </td>
+                <td style="width:125.7pt">
+                    <input style="text-align: center; border: none; width: 125.7pt; margin: auto " value="">
+                </td>
+            </tr>
+
+        }
+        <tr>
+            <td style="width:52.8pt">
+                <p style="text-align:right"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Итого:</span></span></p>
+            </td>
+            <td style="width:27.35pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:32.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:31.85pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.65pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:27.35pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:32.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:29.4pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.65pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:29.4pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:28.9pt">
+                <p>&nbsp;</p>
+            </td>
+            <td style="width:125.7pt">
+                <p><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Всего:</span></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p></p>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <button class="btn btn-outline-primary" type="button">Сохранить изменения</button>
+</div>

@@ -81,9 +81,9 @@ namespace SakovichGleb.Controllers
                     {
                         Login = registerUser.Login,
                         Password = registerUser.Password,
-                        Surname = "Фамилия",
-                        FName = "Имя",
-                        LName = "Отчество"
+                        Surname = "Фамилия" + registerUser.Login,
+                        FName = "Имя" + registerUser.Login,
+                        LName = "Отчество" + registerUser.Login
                     });
                     appDbContext.SaveChanges();
                     user = appDbContext.Users.Where(u => u.Login == registerUser.Login && u.Password == registerUser.Password).FirstOrDefault();

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SakovichGleb.Data.Interfaces;
 using SakovichGleb.Data.Models;
+using SakovichGleb.Data.Repository;
 using SakovichGleb.ViewModels;
 using System.Linq;
 
@@ -12,12 +13,10 @@ namespace SakovichGleb.Controllers
     public class HomeController : Controller
     {
         private readonly IUser userRepository;
-        private HomeViewModel homeViewModel;
 
-        public HomeController(IUser userRepository, HomeViewModel homeViewModel)
+        public HomeController(IUser userRepository)
         {
             this.userRepository = userRepository;
-            this.homeViewModel = homeViewModel;
 
         }
         public IActionResult Index()
@@ -26,10 +25,13 @@ namespace SakovichGleb.Controllers
             if (login != null)
             {
                 User user = userRepository.FindByLogin(login);
-                if (user != null)
+                if (user != null && user.Login == "Admin")
                 {
-                    homeViewModel.User = user;
-                    return View(homeViewModel);
+                    return RedirectToAction("IndexAdmin");
+                }
+                else if (user != null && user.Login != "Admin")
+                {
+                    return View(user);
                 }
                 else
                     ModelState.AddModelError("", "Такого просто не может быть!");
@@ -38,9 +40,19 @@ namespace SakovichGleb.Controllers
                 ModelState.AddModelError("", "Такого просто не может быть!");
             return View();
         }
+        public IActionResult IndexAdmin()
+        {
+            return View(userRepository);
+        }
 
         [HttpPost]
-        public IActionResult Index(HomeViewModel homeViewModeltest)
+        public IActionResult IndexAdmin(UserRepository userRepository)
+        {
+            return View(userRepository);
+        }
+
+        [HttpPost]
+        public IActionResult Index(User usertest)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +70,7 @@ namespace SakovichGleb.Controllers
                 else
                     ModelState.AddModelError("", "Такого просто не может быть!");
             }
-            return View(homeViewModeltest);
+            return View(usertest);
         }
     }
 }

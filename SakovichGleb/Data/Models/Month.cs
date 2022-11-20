@@ -7,6 +7,6 @@ namespace SakovichGleb.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public List<NHours> NHourses { get; set; }
-        public int IdSemestr { get; set; }
+        public int IdUser { get; set; }
     }
 }
