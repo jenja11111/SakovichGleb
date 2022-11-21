@@ -63,9 +63,19 @@
         </tr>
         @for (int i = 1; i < 6; i++)
         {
+
+            string month = "Февраль";
+            if (i == 2)
+                month = "Март";
+            else if (i == 3)
+                month = "Апрель";
+            else if (i == 4)
+                month = "Май";
+            else if (i == 5)
+                month = "Июнь";
             <tr>
                 <td style="width:52.8pt">
-                    <p style="text-align:right"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Февраль</span></span></p>
+                    <p style="text-align:right"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">@month</span></span></p>
                 </td>
                 <td style="width:27.35pt">
                     <p style="text-align: center; border: none; width: 27.35pt; margin: auto "></p>

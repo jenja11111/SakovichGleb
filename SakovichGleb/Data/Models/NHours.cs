@@ -3,7 +3,6 @@
     public class NHours
     {
         public int Id { set; get; }
-        public int IdUser { set; get; } // id пользователя
         public int IdMonth { set; get; } // id месяца
         public ushort Lectures { set; get; }// лекции
         public ushort PracticesLessons { set; get; } // практики

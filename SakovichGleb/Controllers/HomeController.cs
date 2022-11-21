@@ -25,7 +25,7 @@ namespace SakovichGleb.Controllers
             if (login != null)
             {
                 User user = userRepository.FindByLogin(login);
-                if (user != null && user.Login == "Admin")
+                if (user != null && (user.Login == "Admin" || user.Login == "admin"))
                 {
                     return RedirectToAction("IndexAdmin");
                 }
