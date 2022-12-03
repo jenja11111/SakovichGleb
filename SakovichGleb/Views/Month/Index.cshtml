@@ -3,17 +3,17 @@
     ViewBag.Title = "Нагрузка";
 }
 <p style="text-align:center">
-    <select class="form-select" style="width: 520px; margin: auto; font-size: 18pt" aria-label="Default select example">
+    <select id="list" class="form-select" style="width: 520px; margin: auto; font-size: 18pt" aria-label="Default select example">
         <option value="Сентябрь">Сентябрь</option>
-        <option>Октябрь</option>
-        <option>Ноябрь</option>
-        <option>Декабрь</option>
-        <option>Январь</option>
-        <option>Февраль</option>
-        <option>Март</option>
-        <option>Апрель</option>
-        <option>Май</option>
-        <option>Июнь</option>
+        <option value="Октябрь">Октябрь</option>
+        <option value="Ноябрь">Ноябрь</option>
+        <option value="Декабрь">Декабрь</option>
+        <option value="Январь">Январь</option>
+        <option value="Февраль">Февраль</option>
+        <option value="Март">Март</option>
+        <option value="Апрель">Апрель</option>
+        <option value="Май">Май</option>
+        <option value="Июнь">Июнь</option>
     </select>
 </p>
 <table id="myTable" align="center" cellspacing="0" class="table table-bordered border-dark table-sm table-responsive" style="margin: auto; width:700pt">
@@ -201,3 +201,81 @@
 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
     <button class="btn btn-outline-primary" type="button">Сохранить изменения</button>
 </div>
+
+<script>
+    function getSelectValue(e) {
+        let selectedValue = e.target.value;
+        ochistka(selectedValue);
+    }
+
+    const list = document.querySelector('#list');
+
+    list.addEventListener('change', function (e) {
+        getSelectValue(e)
+    });
+</script>
+
+<script>
+    var alles_td = document.getElementsByTagName("td");
+    function ochistka(month) {
+        let c = 1;
+        for (i = 19; i < alles_td.length - 18; i++) {
+            if (month == "Сентябрь" && 18 * c + 1 == i) {
+                if (c == 31) alles_td[i].innerHTML = "<p style=\"text - align: right\"><span style=\"font - size: 11.0pt\"><span style=\"font - family:& quot; Calibri & quot;, sans - serif\"></span></span></p>";
+                else
+                    alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".09.2022</span></span></p>";
+                c++;
+            }
+            else if (month == "Октябрь" && 18 * c + 1 == i) {
+                alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".10.2022</span></span></p>";
+                c++;
+            }
+            else if (month == "Ноябрь" && 18 * c + 1 == i) {
+                if (c == 31) alles_td[i].innerHTML = "<p style=\"text - align: right\"><span style=\"font - size: 11.0pt\"><span style=\"font - family:& quot; Calibri & quot;, sans - serif\"></span></span></p>";
+                else
+                    alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".11.2022</span></span></p>";
+                c++;
+            }
+            else if (month == "Декабрь" && 18 * c + 1 == i) {
+                alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".12.2022</span></span></p>";
+                c++;
+            }
+            else if (month == "Январь" && 18 * c + 1 == i) {
+                alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".01.2023</span></span></p>";
+                c++;
+            }
+            else if (month == "Февраль" && 18 * c + 1 == i) {
+                if (c == 29 || c == 30 || c == 31) alles_td[i].innerHTML = "<p style=\"text - align: right\"><span style=\"font - size: 11.0pt\"><span style=\"font - family:& quot; Calibri & quot;, sans - serif\"></span></span></p>";
+                else
+                    alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".02.2023</span></span></p>";
+                c++;
+            }
+            else if (month == "Март" && 18 * c + 1 == i) {
+                alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".03.2023</span></span></p>";
+                c++;
+            }
+            else if (month == "Апрель" && 18 * c + 1 == i) {
+                if (c == 31) alles_td[i].innerHTML = "<p style=\"text - align: right\"><span style=\"font - size: 11.0pt\"><span style=\"font - family:& quot; Calibri & quot;, sans - serif\"></span></span></p>";
+                else
+                    alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".04.2023</span></span></p>";
+                c++;
+            }
+            else if (month == "Май" && 18 * c + 1 == i) {
+                alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".05.2023</span></span></p>";
+                c++;
+            }
+            else if (month == "Июнь" && 18 * c + 1 == i) {
+                if (c == 31) alles_td[i].innerHTML = "<p style=\"text - align: right\"><span style=\"font - size: 11.0pt\"><span style=\"font - family:& quot; Calibri & quot;, sans - serif\"></span></span></p>";
+                else
+                    alles_td[i].innerHTML = "<p style=\"text-align:right\"><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">" + c + ".06.2023</span></span></p>";
+                c++;
+            }
+            else {
+                if (i == c * 18)
+                    alles_td[i].innerHTML = "<input style=\"text - align: center; border: none; width: 125.7pt; margin: auto\" value=\"\">";
+                else
+                    alles_td[i].innerHTML = "<input style=\"text-align: center; border: none; width: 28.9pt; margin: auto \" value=\"0\">";
+            }
+        }
+    }
+</script>
