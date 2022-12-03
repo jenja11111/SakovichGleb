@@ -199,7 +199,9 @@
 </table>
 <p></p>
 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <button class="btn btn-outline-primary" type="button">Сохранить изменения</button>
+    @*<form action="Index" method="POST">*@
+        <button id="save" @*onclick="save()"*@ class="btn btn-outline-primary" type="button">Сохранить изменения</button>
+    @*</form>*@
 </div>
 
 <script>
@@ -279,3 +281,11 @@
         }
     }
 </script>
+@*<script>
+    //var alles_td = document.getElementsByTagName("td");
+    function save() {
+        for (i = 0; i < 31; i++) 
+        {
+              @Model.NHourses[i].Lectures = document.getElementById('myTable').rows[i+3].cells[1].innerHTML;
+        }
+</script>*@

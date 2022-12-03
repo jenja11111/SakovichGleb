@@ -29,16 +29,28 @@ namespace SakovichGleb.Controllers
         public IActionResult Index()
         {
             MonthViewModel monthViewModel = new MonthViewModel();
-            foreach(NHours nHours in nHoursRepository.GetNHourses())
+            foreach(NHours nHours in nHoursRepository.GetNHourses().Where(x => x.IdMonth == 1))
             {
-
+                if (nHours == null)
+                {
+                    for (int i = 0; i < 31; i++)
+                        monthViewModel.NHourses.Add(new NHours());
+                }
+                else
+                {
+                    monthViewModel.NHourses.Add(nHours);
+                }
             }
-            return View();
+            return View(monthViewModel);
         }
 
         [HttpPost]
         public IActionResult Index(MonthViewModel monthViewModel)
         {
+            foreach (var nHours in monthViewModel.NHourses)
+            {
+                nHoursRepository.SaveNHours(nHours);
+            }
             return View(monthViewModel);
         }
     }

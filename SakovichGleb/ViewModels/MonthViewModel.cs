@@ -8,6 +8,6 @@ namespace SakovichGleb.ViewModels
 {
     public class MonthViewModel
     {
-        List<NHours> NHourses { get; set; }
+        public List<NHours> NHourses { get; set; }
     }
 }

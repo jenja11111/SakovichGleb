@@ -32,7 +32,7 @@
             GuidanceDiplomaDesign = 0; ConsaltingDiplomaDesign = 0;
             ReviewDiplomaDesign = 0; GEK = 0;
             Practics = 0; Mag = 0;
-            TestWork = 0; AllTime = 0;
+            TestWork = 0; AllTime = 0; IdMonth = 1;
         }
 
         public NHours(
