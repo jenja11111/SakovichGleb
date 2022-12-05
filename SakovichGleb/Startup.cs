@@ -32,6 +32,7 @@ namespace SakovichGleb
             services.AddTransient<ISemestr, SemestrRepository>();
             services.AddTransient<IMonth, MonthRepository>();
             services.AddTransient<INHours, NHoursRepository>();
+            services.AddTransient<IRaspisanie, RaspisanieRepository>();
 
             services.AddAuthentication("Cookie")
                 .AddCookie("Cookie", config =>

@@ -1,0 +1,177 @@
+﻿@model SakovichGleb.ViewModels.RaspisanieViewModel
+@{
+    ViewBag.Title = "Расписание";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <p style="text-align:center">
+        <select class="form-select" style="width: 520px; margin: auto; font-size: 16pt" aria-label="Default select example">
+            <option value="Понедельник">Понедельник</option>
+            <option value="Вторник">Вторник</option>
+            <option value="Среда">Среда</option>
+            <option value="Четверг">Четверг</option>
+            <option value="Пятница">Пятница</option>
+            <option value="Суббота">Суббота</option>
+        </select>
+    </p>
+    <p></p>
+    <div>
+        <table align="center" border="1" cellspacing="0" class="MsoTableGrid" style="border-collapse: collapse; border: solid windowtext 1.0pt; margin: auto; width: 506.9pt">
+            <tbody>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">Время занятий</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">1 неделя</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">2 неделя</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">12.00-13.35</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[0]">
+                                <option selected="selected" value="@Model.Name[0]">@Model.Name[0]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[1]">
+                                <option selected="selected" value="@Model.Name[1]">@Model.Name[1]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">13.55-15.30</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[2]">
+                                <option selected="selected" value="@Model.Name[2]">@Model.Name[2]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[3]">
+                                <option selected="selected" value="@Model.Name[3]">@Model.Name[3]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">15.40-17.15</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[4]">
+                                <option selected="selected" value="@Model.Name[4]">@Model.Name[4]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[5]">
+                                <option selected="selected" value="@Model.Name[5]">@Model.Name[5]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">17.45-19.20</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[6]">
+                                <option selected="selected" value="@Model.Name[6]">@Model.Name[6]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[7]">
+                                <option selected="selected" value="@Model.Name[7]">@Model.Name[7]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:112.7pt">
+                        <p style="text-align:center">19.30-21.05</p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[8]">
+                                <option selected="selected" value="@Model.Name[8]">@Model.Name[8]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                    <td style="width:197.1pt">
+                        <p style="text-align:center">
+                            <select asp-for="Name[9]">
+                                <option selected="selected" value="@Model.Name[9]">@Model.Name[9]</option>
+                                <option value="Лекции">Лекции</option>
+                                <option value="Практики">Практики</option>
+                                <option value="Лабораторная">Лабораторная</option>
+                                <option value="Консультация">Консультация</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button id="save" class="btn btn-outline-primary" type="submit">Сохранить изменения</button>
+    </div>
+}

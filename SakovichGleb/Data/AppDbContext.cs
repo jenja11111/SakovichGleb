@@ -14,5 +14,6 @@ namespace SakovichGleb.Data
         public DbSet<Semestr> Semestrs { get; set; }
         public DbSet<Month> Months { get; set; }
         public DbSet<NHours> NHourses { get; set; }
+        public DbSet<Raspisanie> Raspisanies { get; set; }
     }
 }

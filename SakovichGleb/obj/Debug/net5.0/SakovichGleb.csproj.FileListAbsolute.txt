@@ -179,3 +179,4 @@ C:\Users\smail\Source\Repos\jenja11111\SakovichGleb\SakovichGleb\obj\Debug\net5.
 C:\Users\smail\Source\Repos\jenja11111\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\Semestr\IndexSemestr1.cshtml.g.cs
 C:\Users\smail\Source\Repos\jenja11111\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\Semestr\IndexSemestr2.cshtml.g.cs
 C:\Users\smail\Source\Repos\jenja11111\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\Month\Index.cshtml.g.cs
+C:\Users\smail\Source\Repos\jenja11111\SakovichGleb\SakovichGleb\obj\Debug\net5.0\Razor\Views\Raspisanie\Index.cshtml.g.cs
