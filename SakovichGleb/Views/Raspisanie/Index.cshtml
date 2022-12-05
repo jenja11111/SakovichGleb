@@ -7,13 +7,13 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <p style="text-align:center">
-        <select class="form-select" style="width: 520px; margin: auto; font-size: 16pt" aria-label="Default select example">
-            <option value="Понедельник">Понедельник</option>
-            <option value="Вторник">Вторник</option>
-            <option value="Среда">Среда</option>
-            <option value="Четверг">Четверг</option>
-            <option value="Пятница">Пятница</option>
-            <option value="Суббота">Суббота</option>
+        <select id="list" asp-for="Day" class="form-select" style="width: 520px; margin: auto; font-size: 16pt" aria-label="Default select example">
+            <option selected value="1">Понедельник</option>
+            <option value="2">Вторник</option>
+            <option value="3">Среда</option>
+            <option value="4">Четверг</option>
+            <option value="5">Пятница</option>
+            <option value="6">Суббота</option>
         </select>
     </p>
     <p></p>
@@ -37,7 +37,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[0]">
+                            <select id="12_1" asp-for="Name[0]">
                                 <option selected="selected" value="@Model.Name[0]">@Model.Name[0]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -48,7 +48,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[1]">
+                            <select id="12_2" asp-for="Name[1]">
                                 <option selected="selected" value="@Model.Name[1]">@Model.Name[1]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -64,7 +64,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[2]">
+                            <select id="13_1" asp-for="Name[2]">
                                 <option selected="selected" value="@Model.Name[2]">@Model.Name[2]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -75,7 +75,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[3]">
+                            <select id="13_2" asp-for="Name[3]">
                                 <option selected="selected" value="@Model.Name[3]">@Model.Name[3]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -91,7 +91,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[4]">
+                            <select id="15_1" asp-for="Name[4]">
                                 <option selected="selected" value="@Model.Name[4]">@Model.Name[4]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -102,7 +102,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[5]">
+                            <select id="15_2" asp-for="Name[5]">
                                 <option selected="selected" value="@Model.Name[5]">@Model.Name[5]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -118,7 +118,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[6]">
+                            <select id="17_1" asp-for="Name[6]">
                                 <option selected="selected" value="@Model.Name[6]">@Model.Name[6]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -129,7 +129,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[7]">
+                            <select id="17_2" asp-for="Name[7]">
                                 <option selected="selected" value="@Model.Name[7]">@Model.Name[7]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -145,7 +145,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[8]">
+                            <select id="19_1" asp-for="Name[8]">
                                 <option selected="selected" value="@Model.Name[8]">@Model.Name[8]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>
@@ -156,7 +156,7 @@
                     </td>
                     <td style="width:197.1pt">
                         <p style="text-align:center">
-                            <select asp-for="Name[9]">
+                            <select id="19_2" asp-for="Name[9]">
                                 <option selected="selected" value="@Model.Name[9]">@Model.Name[9]</option>
                                 <option value="Лекции">Лекции</option>
                                 <option value="Практики">Практики</option>

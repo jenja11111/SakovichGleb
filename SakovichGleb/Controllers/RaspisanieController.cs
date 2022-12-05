@@ -28,24 +28,26 @@ namespace SakovichGleb.Controllers
             User user = userRepository.FindByLogin(login);
             Raspisanie raspisanie;
             RaspisanieViewModel raspisanieViewModel;
-            if (raspisanieRepository.FindByUserId(user.Id) == null)
+            if (raspisanieRepository.FindByUserIdAndDay(user.Id, DayOfWeek.Monday) == null)
             {
                 raspisanie = new Raspisanie
                 {
                     idUser = user.Id,
                     Name = "Выбор,Выбор,Выбор,Выбор,Выбор,Выбор,Выбор,Выбор,Выбор,Выбор",
-                    User = user
+                    User = user,
+                    Day = DayOfWeek.Monday
                 };
                 raspisanieRepository.SaveRaspisanie(raspisanie);
             }
             else
             {
-                raspisanie = raspisanieRepository.FindByUserId(user.Id);
+                raspisanie = raspisanieRepository.FindByUserIdAndDay(user.Id, DayOfWeek.Monday);
             }
             raspisanieViewModel = new RaspisanieViewModel
             {
                 Raspisanie = raspisanie,
-                Name = raspisanie.Name.Split(',')
+                Name = raspisanie.Name.Split(','),
+                Day = raspisanie.Day
             };
             return View(raspisanieViewModel);
         }
@@ -55,8 +57,7 @@ namespace SakovichGleb.Controllers
         {
             var login = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "Login").Value;
             User user = userRepository.FindByLogin(login);
-
-            raspisanieViewModel.Raspisanie = raspisanieRepository.FindByUserId(user.Id);
+            Raspisanie raspisanie;
 
             string fullName = "";
             for (int i = 0; i < raspisanieViewModel.Name.Length; i++)
@@ -65,9 +66,24 @@ namespace SakovichGleb.Controllers
                     fullName += raspisanieViewModel.Name[i];
                 else
                     fullName += raspisanieViewModel.Name[i] + ",";
-            }  
+            }
 
-            raspisanieViewModel.Raspisanie.Name = fullName;
+            if (raspisanieRepository.FindByUserIdAndDay(user.Id, raspisanieViewModel.Day) == null)
+            {
+                raspisanie = new Raspisanie
+                {
+                    idUser = user.Id,
+                    Name = fullName,
+                    User = user,
+                    Day = raspisanieViewModel.Day
+                };
+                raspisanieRepository.SaveRaspisanie(raspisanie);
+            }
+            else
+            {
+                raspisanie = raspisanieRepository.FindByUserIdAndDay(user.Id, raspisanieViewModel.Day);
+            }
+            raspisanieViewModel.Raspisanie = raspisanie;
 
             raspisanieRepository.SaveRaspisanie(raspisanieViewModel.Raspisanie);
 

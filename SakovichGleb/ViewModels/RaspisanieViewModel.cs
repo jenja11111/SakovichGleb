@@ -9,6 +9,7 @@ namespace SakovichGleb.ViewModels
     public class RaspisanieViewModel
     {
         public Raspisanie Raspisanie { get; set; }
+        public DayOfWeek Day { get; set; }
         public string[] Name { get; set; }
     }
 }
