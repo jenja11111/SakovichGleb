@@ -82,10 +82,12 @@ namespace SakovichGleb.Controllers
             else
             {
                 raspisanie = raspisanieRepository.FindByUserIdAndDay(user.Id, raspisanieViewModel.Day);
+                raspisanie.Name = fullName;
             }
+
             raspisanieViewModel.Raspisanie = raspisanie;
 
-            raspisanieRepository.SaveRaspisanie(raspisanieViewModel.Raspisanie);
+            raspisanieRepository.SaveRaspisanie(raspisanie);
 
             return View(raspisanieViewModel);
         }
