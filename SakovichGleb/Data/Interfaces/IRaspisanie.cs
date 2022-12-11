@@ -11,6 +11,7 @@ namespace SakovichGleb.Data.Interfaces
         public IEnumerable<Raspisanie> GetRaspisanie();
         public Raspisanie FindByUserId(int id);
         public Raspisanie FindByUserIdAndDay(int id, DayOfWeek day);
+        public Raspisanie FindByUserIdAndDayAndSmena(int id, DayOfWeek day, Smena smena);
         public int SaveRaspisanie(Raspisanie raspisanie);
         public void DeleteRaspisanie(Raspisanie raspisanie);
     }

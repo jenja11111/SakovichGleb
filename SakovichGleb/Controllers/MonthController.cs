@@ -14,44 +14,143 @@ namespace SakovichGleb.Controllers
     public class MonthController : Controller
     {
         private readonly IUser userRepository;
-        private readonly ISemestr semestrRepository;
-        private readonly IMonth monthRepository;
-        private readonly INHours nHoursRepository;
+        private readonly IRaspisanie raspisanieRepository;
 
-        public MonthController(IUser userRepository, ISemestr semestrRepository, IMonth monthRepository, INHours nHoursRepository)
+        public MonthController(IRaspisanie raspisanieRepository, IUser userRepository)
         {
+            this.raspisanieRepository = raspisanieRepository;
             this.userRepository = userRepository;
-            this.semestrRepository = semestrRepository;
-            this.monthRepository = monthRepository;
-            this.nHoursRepository = nHoursRepository;
         }
 
         public IActionResult Index()
         {
-            MonthViewModel monthViewModel = new MonthViewModel();
-            foreach(NHours nHours in nHoursRepository.GetNHourses().Where(x => x.IdMonth == 1))
-            {
-                if (nHours == null)
-                {
-                    for (int i = 0; i < 31; i++)
-                        monthViewModel.NHourses.Add(new NHours());
-                }
-                else
-                {
-                    monthViewModel.NHourses.Add(nHours);
-                }
-            }
-            return View(monthViewModel);
-        }
+            MonthViewModel model = new MonthViewModel();
 
-        [HttpPost]
-        public IActionResult Index(MonthViewModel monthViewModel)
-        {
-            foreach (var nHours in monthViewModel.NHourses)
+            var login = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "Login").Value;
+            User user = userRepository.FindByLogin(login);
+
+            if (raspisanieRepository.GetRaspisanie().Where(x => x.idUser == user.Id) != null)
             {
-                nHoursRepository.SaveNHours(nHours);
+                foreach (var raspisanie in raspisanieRepository.GetRaspisanie().Where(x => x.idUser == user.Id))
+                {
+                    for (int j = 0; j < raspisanie.Name.Split(',').Length; j++)
+                    {
+                        switch (raspisanie.Day)
+                        {
+                            case DayOfWeek.Monday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[0, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[0, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[0, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[0, 3] += 2;
+                                }                 
+                                break;
+                            case DayOfWeek.Tuesday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[1, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[1, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[1, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[1, 3] += 2;
+                                }
+                                break;
+                            case DayOfWeek.Wednesday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[2, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[2, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[2, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[2, 3] += 2;
+                                }
+                                break;
+                            case DayOfWeek.Thursday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[3, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[3, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[3, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[3, 3] += 2;
+                                }
+                                break;
+                            case DayOfWeek.Friday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[4, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[4, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[4, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[4, 3] += 2;
+                                }
+                                break;
+                            case DayOfWeek.Saturday:
+                                if (raspisanie.Name.Split(',')[j] == "Лекции")
+                                {
+                                    model.Hours[5, 0] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Практики")
+                                {
+                                    model.Hours[5, 1] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Лабораторная")
+                                {
+                                    model.Hours[5, 2] += 2;
+                                }
+                                else if (raspisanie.Name.Split(',')[j] == "Консультация")
+                                {
+                                    model.Hours[5, 3] += 2;
+                                }
+                                break;
+                        }
+                    }
+                }
+                return View(model);
             }
-            return View(monthViewModel);
+            return View();
         }
     }
 }

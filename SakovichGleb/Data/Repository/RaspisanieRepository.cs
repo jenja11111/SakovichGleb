@@ -37,7 +37,10 @@ namespace SakovichGleb.Data.Repository
         {
             return appDbContext.Raspisanies.FirstOrDefault(x => x.idUser == id && x.Day == day);
         }
-
+        public Raspisanie FindByUserIdAndDayAndSmena(int id, DayOfWeek day, Smena smena)
+        {
+            return appDbContext.Raspisanies.FirstOrDefault(x => x.idUser == id && x.Day == day && x.Smena == smena);
+        }
         public int SaveRaspisanie(Raspisanie raspisanie)
         {
             if (raspisanie.Id == default)

@@ -8,6 +8,19 @@ namespace SakovichGleb.ViewModels
 {
     public class MonthViewModel
     {
-        public List<NHours> NHourses { get; set; }
+        public int[,] Hours = new int[,] 
+        { 
+            { 0, 0, 0, 0 }, // Понедельник
+            { 0, 0, 0, 0 }, // Вторник и т.д.
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 },
+            { 0, 0, 0, 0 }
+        };
+
+        public int Lectures { get; set; }
+        public int Practice { get; set; }
+        public int Labs { get; set; }
+        public int Cons { get; set; }
     }
 }

@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace SakovichGleb.Data.Models
 {
+    public enum Smena
+    {
+        FSmena = 1,
+        SSmena = 2
+    }
     public enum DayWeek
     {
         Monday = 1,
@@ -17,6 +22,7 @@ namespace SakovichGleb.Data.Models
     public class Raspisanie
     {
         public int Id { get; set; }
+        public Smena Smena { get; set; }
         public DayOfWeek Day { get; set; }
         public string Name { get; set; }
         public int idUser { get; set; }
